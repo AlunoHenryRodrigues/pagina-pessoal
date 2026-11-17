@@ -1,0 +1,309 @@
+:root {
+    --vermelho: #df5a60;
+    --azul: #4b6179;
+    --texto: #ebe9e5;
+    --fundo: #151515;
+    --faixa: #222326;
+    --rodape: #1c252f;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: var(--texto);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: 0.5rem;
+    background: var(--vermelho);
+}
+
+p {
+    max-width: 60ch;
+    margin-bottom: 1rem;
+}
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--fundo);
+    border-bottom: 3px solid var(--vermelho);
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.cabecalho a {
+    color: var(--texto);
+    text-decoration: none;
+}
+
+.cabecalho a:hover,
+.cabecalho a:focus-visible {
+    color: var(--vermelho);
+    text-decoration: underline;
+}
+
+.nome {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem 1rem;
+}
+
+section {
+    scroll-margin-top: 7rem;
+}
+
+.apresentacao,
+.sobre-mim,
+.segredo-conteudo,
+.amigo,
+.curiosidade-extra {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.apresentacao,
+.curiosidades,
+.pessoas,
+.amigo {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.faixa {
+    background: var(--faixa);
+}
+
+.sobre-mim,
+.segredo-conteudo {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.foto {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--azul);
+    border-radius: 12px;
+}
+
+.foto-principal {
+    width: 320px;
+}
+
+.texto-apresentacao,
+.sobre-mim > div,
+.segredo-conteudo > div,
+.amigo > div {
+    flex: 1;
+}
+
+.foto-retrato {
+    width: 260px;
+    max-height: 330px;
+    object-fit: cover;
+}
+
+.curiosidades-conteudo {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.foto-espelho {
+    width: 260px;
+}
+
+.segredo h2 {
+    color: var(--vermelho);
+}
+
+.curiosidade-extra {
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.foto-flor {
+    width: 180px;
+    max-height: 250px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.foto-aranha {
+    width: 320px;
+}
+
+.pessoas-fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.pessoas-fotos .foto {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center 55%;
+}
+
+.pessoas-fotos .foto:first-child {
+    object-position: center 45%;
+}
+
+.pessoas-fotos .foto:last-child {
+    object-position: center 40%;
+}
+
+.foto-amigo {
+    width: 310px;
+    max-height: 390px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+footer {
+    padding: 1.2rem 0;
+    color: var(--texto);
+    background: var(--rodape);
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 720px) {
+    .cabecalho {
+        position: static;
+    }
+
+    .cabecalho-conteudo {
+        display: block;
+        padding-top: 0.75rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .nome {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-size: 1rem;
+        text-align: center;
+        white-space: normal;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        width: 100%;
+        border-top: 1px solid var(--faixa);
+    }
+
+    nav a {
+        display: block;
+        padding: 0.5rem 0.25rem;
+        font-size: 0.9rem;
+        line-height: 1.25;
+        text-align: center;
+    }
+
+    section {
+        scroll-margin-top: 1rem;
+    }
+
+    .apresentacao,
+    .sobre-mim,
+    .segredo-conteudo,
+    .amigo,
+    .curiosidade-extra {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .apresentacao,
+    .curiosidades,
+    .pessoas,
+    .amigo,
+    .sobre-mim,
+    .segredo-conteudo {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .apresentacao,
+    .sobre-mim,
+    .segredo-conteudo,
+    .amigo,
+    .curiosidades-conteudo,
+    .curiosidade-extra {
+        gap: 1.5rem;
+    }
+
+    .curiosidades-conteudo,
+    .pessoas-fotos {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-principal,
+    .foto-retrato,
+    .foto-espelho,
+    .foto-flor,
+    .foto-aranha,
+    .foto-amigo {
+        width: min(100%, 320px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pessoas-fotos .foto {
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.55rem;
+    }
+}
